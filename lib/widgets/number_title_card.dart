@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:netflix_tmdb/data/data_controller.dart';
 
 import 'main_title.dart';
 import 'number_card.dart';
@@ -16,15 +17,20 @@ class NumberTitleCard extends StatelessWidget {
         MainTitle(title: 'Top 10 in india Today'),
         LimitedBox(
             maxHeight: 200,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: List.generate(
-                10,
-                (index) => NumberCard(
-                  index: index,
-                ),
-              ),
-            )),
+            child: ValueListenableBuilder(
+                valueListenable: ContentController.instance.topMoviesNotifier,
+                builder: (BuildContext ctx, List<dynamic> item, Widget? _) {
+                  return ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: List.generate(
+                      10,
+                      (index) => NumberCard(
+                        index: index,
+                        item: item,
+                      ),
+                    ),
+                  );
+                })),
         SizedBox(
           height: 10,
         ),

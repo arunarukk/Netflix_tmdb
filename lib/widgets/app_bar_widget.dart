@@ -20,16 +20,22 @@ class AppBarWidget extends StatelessWidget {
           ),
         ),
         Spacer(),
-        Icon(icon,
+        Icon(
+          icon,
           color: Colors.white,
-          size: 30,),
+          size: 30,
+        ),
         const SizedBox(
           width: 20,
         ),
         Container(
           height: 30,
           width: 30,
-          color: Colors.blue,
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: NetworkImage(
+                      'https://i.pinimg.com/474x/86/2a/53/862a537a244d4f18264398ebd1a8873a.jpg'),
+                  fit: BoxFit.fitWidth)),
         ),
         const SizedBox(
           width: 10,

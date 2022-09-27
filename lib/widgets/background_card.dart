@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_tmdb/data/data_controller.dart';
 
 import '../screens/screen_home.dart';
 
@@ -11,11 +12,12 @@ class BackgroundCard extends StatelessWidget {
       children: [
         Container(
           width: double.infinity,
-          height: 600,
+          height: 550,
           decoration: const BoxDecoration(
               image: DecorationImage(
                   image: NetworkImage(
-                      'https://icdn.digitaltrends.com/image/digitaltrends/ysjte1iqn8pfq470tumnvib1whp-500x500.jpg'))),
+                      'https://m.media-amazon.com/images/M/MV5BMTkzNjEzMDEzMF5BMl5BanBnXkFtZTgwMDI0MjE4MjE@._V1_FMjpg_UX1000_.jpg'),
+                  fit: BoxFit.fitWidth)),
         ),
         Positioned(
           bottom: 0,
@@ -52,13 +54,13 @@ class BackgroundCard extends StatelessWidget {
       icon: const Icon(
         Icons.play_arrow,
         color: Colors.black,
-        size: 25,
+        size: 22,
       ),
       label: const Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Text(
           'Play',
-          style: TextStyle(fontSize: 20, color: Colors.black),
+          style: TextStyle(fontSize: 18, color: Colors.black),
         ),
       ),
     );

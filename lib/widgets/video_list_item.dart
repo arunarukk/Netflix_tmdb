@@ -1,15 +1,26 @@
 import 'package:flutter/material.dart';
 
 class VideoListItem extends StatelessWidget {
+  List<dynamic> item = [];
   final int index;
-  const VideoListItem({Key? key, required this.index}) : super(key: key);
+  VideoListItem({Key? key, required this.item, required this.index})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Container(
-          color: Colors.accents[index % Colors.accents.length],
+          // color: Colors.accents[index % Colors.accents.length],
+          decoration: BoxDecoration(
+            //color: Colors.blue,
+            //borderRadius: BorderRadius.circular(10),
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: NetworkImage('https://image.tmdb.org/t/p/w500' +
+                  item[index]['poster_path']),
+            ),
+          ),
         ),
         Align(
           alignment: Alignment.bottomCenter,

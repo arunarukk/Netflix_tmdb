@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 
 class NumberCard extends StatelessWidget {
   final int index;
-  const NumberCard({Key? key, required this.index}) : super(key: key);
+  List<dynamic> item = [];
+  
+   NumberCard({Key? key, required this.item, required this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +22,9 @@ class NumberCard extends StatelessWidget {
               width: 120,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                image: const DecorationImage(
+                image:  DecorationImage(
                   image: NetworkImage(
-                      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/over-the-moon-netflix-movie-1604866047.png'),
+              'https://image.tmdb.org/t/p/w500' + item[index]['poster_path']),
                 ),
               ),
             ),

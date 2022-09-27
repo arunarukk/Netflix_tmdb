@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class MainCard extends StatelessWidget {
-  const MainCard({
-    Key? key,
-  }) : super(key: key);
+  List<dynamic> item = [];
+  int index;
+  MainCard({Key? key, required this.item, required this.index})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +15,10 @@ class MainCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.blue,
         borderRadius: BorderRadius.circular(10),
-        image: const DecorationImage(
+        image: DecorationImage(
           fit: BoxFit.cover,
           image: NetworkImage(
-              'https://upload.wikimedia.org/wikipedia/en/e/e6/Enola_Holmes_poster.jpeg'),
+              'https://image.tmdb.org/t/p/w500' + item[index]['poster_path']),
         ),
       ),
     );
